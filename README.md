@@ -17,7 +17,9 @@ docker ps -q (Retorna o hash dos containers)
 docker stop -t 0 $(docker ps -q) (Para todos os containers)    
 
 ## Volumes
-docker volume ls (Lista todos os volumes criados)  
+docker volume ls (Lista todos os volumes criados) 
+docker volume create --driver local --opt type=none --opt device=D:/ESTUDOS/DOCKER --opt o=bind nomevolume  
+docker volume inspect nomevolume (lista os dados do volume)  
 docker create volume nomevolume (cria um volume local)  
 docker run -v "pathlocal:pathcontainer" image (Criando um volume)  
 docker run -v -p portalocal:portacontainer "pathlocal:pathcontainer" image (Criando um volume) 
