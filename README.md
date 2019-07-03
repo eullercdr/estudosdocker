@@ -27,6 +27,7 @@ docker inspect id-container (mostra as informações do container)
 
 ## Commit and Push Docker
 docker commit hashcointainer eullercristian/nginx-commit  
+docker commit hashcointainer eullercristian/nginx-commit:v2 (Versiona a imagem)    
 
 ## Docker File
 docker build -f Dockerfile -t eullercristian/node . (Buildando através de docker file)  
