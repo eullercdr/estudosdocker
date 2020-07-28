@@ -16,6 +16,10 @@ docker port id-container (Lista as portas utilizadas pelo container)
 docker ps -q (Retorna o hash dos containers)  
 docker stop -t 0 $(docker ps -q) (Para todos os containers)    
 
+## Mão na Massa
+docker run nginx:latest  
+docker run nginx:tag  
+
 ## Volumes
 docker volume ls (Lista todos os volumes criados) 
 docker volume create --driver local --opt type=none --opt device=//d//estudos//docker --opt o=bind nomevolume  
