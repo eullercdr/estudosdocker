@@ -27,6 +27,7 @@ docker run -d --name my_nginx -p 8082:80 -v $(pwd):/usr/share/nginx/html nginx:a
 
 ## Acessar o container
 docker exec -it my_nginx bash  
+docker exec -it laravel apk add bash (add bash in cointainer alpines)  
 docker exec -it my_nginx /bin/sh (windows)  
 
 ## Volumes
