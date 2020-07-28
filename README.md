@@ -17,8 +17,11 @@ docker ps -q (Retorna o hash dos containers)
 docker stop -t 0 $(docker ps -q) (Para todos os containers)    
 
 ## Mão na Massa
-docker run nginx:latest  
-docker run nginx:tag  
+docker run -d nginx:latest  
+docker run -d nginx:tag  
+docker run -d --name my_nginx nginx:alpine  
+docker run -d --name nginx_porta -p 8082:80 nginx:alpine
+
 
 ## Volumes
 docker volume ls (Lista todos os volumes criados) 
