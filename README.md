@@ -20,8 +20,14 @@ docker stop -t 0 $(docker ps -q) (Para todos os containers)
 docker run -d nginx:latest  
 docker run -d nginx:tag  
 docker run -d --name my_nginx nginx:alpine  
-docker run -d --name nginx_porta -p 8082:80 nginx:alpine
+docker run -d --name nginx_porta -p 8082:80 nginx:alpine  
 
+## Mão na Massa Volumes
+docker run -d --name my_nginx -p 8082:80 -v $(pwd):/usr/share/nginx/html nginx:alpine  
+
+## Acessar o container
+docker exec -it my_nginx bash  
+docker exec -it my_nginx /bin/sh (windows)  
 
 ## Volumes
 docker volume ls (Lista todos os volumes criados) 
