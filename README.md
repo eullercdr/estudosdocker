@@ -25,19 +25,18 @@ docker run -d --name nginx_porta -p 8082:80 nginx:alpine
 ## Mão na Massa Volumes
 docker run -d --name my_nginx -p 8082:80 -v $(pwd):/usr/share/nginx/html nginx:alpine  
 
+## Volumes
+docker volume ls (Lista todos os volumes criados)   
+docker volume inspect nomevolume (lista os dados do volume)  
+docker create volume meuvolume (cria um volume local)  
+docker run --name nginx -d --mount type=volume,source=meuvolume,target=/pasta nginx (cria um container nginx e usa um volume já criado anteriormente)
+docker run --name nginx3 -d -v meuvolume:/app nginx (outra forma de atachar o volume)
+docker volume prune (limpa dados que não estão sendo utilizados no volume)
+
 ## Acessar o container
 docker exec -it my_nginx bash  
 docker exec -it laravel apk add bash (add bash in cointainer alpines)  
 docker exec -it my_nginx /bin/sh (windows)  
-
-## Volumes
-docker volume ls (Lista todos os volumes criados) 
-docker volume create --driver local --opt type=none --opt device=//d//estudos//docker --opt o=bind nomevolume  
-docker volume inspect nomevolume (lista os dados do volume)  
-docker create volume nomevolume (cria um volume local)  
-docker run -v "pathlocal:pathcontainer" image (Criando um volume)  
-docker run -v -p portalocal:portacontainer "pathlocal:pathcontainer" image (Criando um volume) 
-docker inspect id-container (mostra as informações do container)  
 
 ## Commit and Push Docker
 docker commit hashcointainer eullercristian/nginx-commit  
