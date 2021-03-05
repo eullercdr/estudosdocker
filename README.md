@@ -50,10 +50,10 @@ docker push eullercristian/node (subindo a imagem)
 docker pull eullercristian/node (baixando a imagem)  
 
 ## Tipos de rede
-**Bridge ** Rede default do docker, utilizada para que os containers se comuniquem
-**Host**  Mescla a network do docker com a network do host.  Possibilita que o container acesse portas do host e vice versa, sem a necessidade de expor portas.
-**Overlay** Permite que containers de maquinas diferentes se comuniquem, como se fosse a mesma rede.
-**NONE** Sem rede, container rodando de forma isolada 
+**Bridge ** Rede default do docker, utilizada para que os containers se comuniquem  
+**Host**  Mescla a network do docker com a network do host.  Possibilita que o container acesse portas do host e vice versa, sem a necessidade de expor portas.  
+**Overlay** Permite que containers de maquinas diferentes se comuniquem, como se fosse a mesma rede.  
+**NONE** Sem rede, container rodando de forma isolada   
 
 ## Criando redes
  docker network create --driver bridge minha-rede (criando uma rede no docker)  
